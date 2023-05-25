@@ -1,6 +1,6 @@
 # AWS CodePipeline CI/CD example
 
-## Architectures
+## Architecture
 ![AWS CodePipeline CI/CD example](images/Architectures.JPG) 
 
 Terraform is an infrastructure-as-code (IaC) tool that helps you create, update, and version your infrastructure in a secure and repeatable manner.
@@ -75,7 +75,7 @@ git@github.com:aws-samples/aws-codepipeline-terraform-cicd-samples.git
 Note: If you don't have git installed, [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
-#### Step 2: Update the variables in `examples/terraform.tfvars` based on your requirement. Make sure you ae updating the variables project_name, environment, source_repo_name, source_repo_branch, create_new_repo, stage_input and build_projects.
+#### Step 2: Update the variables in `terraform.tfvars` based on your requirement. Make sure you ae updating the variables project_name, environment, source_repo_name, source_repo_branch, create_new_repo, stage_input and build_projects.
 
 - If you are planning to use an existing terraform CodeCommit repository, then update the variable create_new_repo as false and provide the name of your existing repo under the variable source_repo_name
 - If you are planning to create new terraform CodeCommit repository, then update the variable create_new_repo as true and provide the name of your new repo under the variable source_repo_name
@@ -88,9 +88,8 @@ Note: If you don't have git installed, [install git](https://git-scm.com/book/en
 
 #### Step 6: Start a Terraform run using the command terraform apply
 
-Note: Sample terraform.tfvars are available in the examples directory. You may use the below command if you need to provide this sample tfvars as an input to the apply command.
 ```shell
-terraform apply -var-file=./examples/terraform.tfvars
+terraform apply
 ```
 
 ## Pre-Requisites
@@ -192,12 +191,4 @@ Alternatively, use the _**create_new_role = false**_ option to use an existing I
 | <a name="output_s3_arn"></a> [s3\_arn](#output\_s3\_arn) | The ARN of the S3 Bucket |
 | <a name="output_s3_bucket_name"></a> [s3\_bucket\_name](#output\_s3\_bucket\_name) | The Name of the S3 Bucket |
 <!-- END_TF_DOCS -->
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the LICENSE file.
 
